@@ -1,0 +1,17 @@
+# Blueprint do Render — https://render.com/docs/blueprint-spec
+# Deploy: no painel do Render, New + > Blueprint > aponte para este repositório.
+#
+# ATENÇÃO: o banco SQLite grava em disco temporário no Render (zera a cada
+# deploy). Para produção de verdade, o passo seguinte é migrar os dados para
+# o Supabase (Postgres) — em andamento.
+services:
+  - type: web
+    name: financeiro
+    runtime: node
+    plan: free
+    buildCommand: npm run build:front
+    startCommand: npm start
+    healthCheckPath: /api/auth/status
+    envVars:
+      - key: NODE_VERSION
+        value: 24.17.0

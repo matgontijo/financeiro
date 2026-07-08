@@ -1,0 +1,92 @@
+@import '@fontsource-variable/inter';
+@import 'tailwindcss';
+
+/* ------------------------------------------------------------------ */
+/* Design tokens — Financeiro Pessoal (novo front)                     */
+/* Paleta de gráficos validada (dataviz): CVD ΔE 23.4, contraste ≥3:1  */
+/* ------------------------------------------------------------------ */
+@theme {
+  --font-sans: 'Inter Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* superfícies */
+  --color-page: #070b16;
+  --color-surface: #101729;
+  --color-card: #131a2c;
+  --color-raise: #1a2338;
+
+  /* tinta */
+  --color-ink: #eef1fa;
+  --color-ink-2: #b8c0d8;
+  --color-mute: #7c869f;
+  --color-grid: #202942;
+  --color-line: #273250;
+
+  /* marca */
+  --color-brand: #6d7cfa;
+  --color-brand-2: #22d3ee;
+
+  /* séries de dados (validadas p/ superfície escura) */
+  --color-chart-blue: #3987e5;
+  --color-chart-green: #0ca30c;
+  --color-chart-red: #e66767;
+  --color-chart-yellow: #c98500;
+  --color-chart-violet: #9085e9;
+
+  /* status */
+  --color-good: #0ca30c;
+  --color-warn: #fab219;
+  --color-crit: #d03b3b;
+}
+
+html, body, #root { height: 100%; }
+
+body {
+  background:
+    radial-gradient(60rem 32rem at 8% -10%, rgba(109, 124, 250, 0.16), transparent 60%),
+    radial-gradient(50rem 30rem at 96% 0%, rgba(34, 211, 238, 0.10), transparent 55%),
+    radial-gradient(70rem 40rem at 50% 120%, rgba(144, 133, 233, 0.10), transparent 60%),
+    var(--color-page);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: rgba(109, 124, 250, 0.35); }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb {
+  background: var(--color-line);
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-track { background: transparent; }
+
+/* cartão de vidro — a superfície padrão do produto */
+.glass {
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015));
+  border: 1px solid rgba(148, 163, 216, 0.13);
+  border-radius: 1rem;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 36px rgba(2, 5, 16, 0.45);
+}
+
+.grad-text {
+  background: linear-gradient(92deg, #a5b0ff, #67e8f9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.grad-bg { background: linear-gradient(120deg, var(--color-brand), var(--color-brand-2)); }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+.rise { animation: rise 0.35s cubic-bezier(0.2, 0.8, 0.3, 1) backwards; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Financeiro Pessoal",
+  "short_name": "Financeiro",
+  "description": "Controle de finanças pessoais — seus dados ficam no seu computador",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0d14",
+  "theme_color": "#0b0d14",
+  "lang": "pt-BR",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

@@ -1,0 +1,19 @@
+# dados do usuário — NUNCA versionar
+financeiro.db
+financeiro.db-wal
+financeiro.db-shm
+*.usuario
+anexos/
+
+# dependências e builds locais
+node_modules/
+frontend/node_modules/
+frontend/dist/
+
+# segredos
+.env
+*.env
+
+# sistema
+Thumbs.db
+desktop.ini

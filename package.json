@@ -1,0 +1,13 @@
+{
+  "name": "financeiro-pessoal",
+  "version": "1.0.0",
+  "description": "Controle de finanças pessoais — servidor Node sem dependências + front React",
+  "private": true,
+  "scripts": {
+    "start": "node --no-warnings server.js",
+    "build:front": "cd frontend && npm ci && npm run build && rm -rf ../public-novo && cp -r dist ../public-novo"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}
