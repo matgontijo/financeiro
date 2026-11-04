@@ -1,3 +1,5 @@
+> Guia da versão anterior: as referências a SQLite/financeiro.db e backup via OneDrive não descrevem o servidor atual. Consulte o [README atual](README.md), que documenta Supabase/PostgreSQL.
+
 # 💰 Financeiro Pessoal
 
 Aplicativo local de controle de finanças pessoais. Roda no seu próprio computador,
